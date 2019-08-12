@@ -3,6 +3,10 @@
 *.iml
 *.iws
 
+# Maven
+log/
+target/
+
 # Compiled class file
 *.class
 
