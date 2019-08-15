@@ -1,4 +1,4 @@
-package lesson3.stack;
+package Algorithms.lesson3.stack;
 
 public interface Stack<E> {
 

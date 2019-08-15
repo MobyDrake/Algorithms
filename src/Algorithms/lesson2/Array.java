@@ -1,4 +1,4 @@
-package lesson2;
+package Algorithms.lesson2;
 
 public interface Array<E> {
 
