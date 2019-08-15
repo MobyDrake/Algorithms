@@ -1,4 +1,4 @@
-package Test;
+package lesson2.Test;
 
 import lesson2.Array;
 import lesson2.SortedArrayImpl;
