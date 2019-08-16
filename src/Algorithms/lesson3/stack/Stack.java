@@ -1,7 +1,8 @@
 package Algorithms.lesson3.stack;
 
-public interface Stack<E> {
+import Algorithms.ICollection;
 
+public interface Stack<E> extends ICollection {
 
     void push(E value);
 
