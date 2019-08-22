@@ -1,6 +1,8 @@
-package lesson2;
+package Algorithms.lesson2;
 
-public interface Array<E> {
+import Algorithms.ICollection;
+
+public interface Array<E> extends ICollection {
 
     void add(E value);
 
@@ -17,9 +19,9 @@ public interface Array<E> {
 
     boolean contain(E value);
     int indexOf(E value);
-
-    int size();
-    boolean isEmpty();
+//перенесенно в общий интерфейс ICollection
+//    int size();
+//    boolean isEmpty();
 
     void display();
 

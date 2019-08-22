@@ -1,7 +1,8 @@
-package lesson2.Test;
+package Algorithms.lesson2.Test;
 
-import lesson2.Array;
-import lesson2.ArrayImpl;
+
+import Algorithms.lesson2.Array;
+import Algorithms.lesson2.ArrayImpl;
 import org.junit.Before;
 import org.junit.Test;
 
