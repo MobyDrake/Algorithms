@@ -38,5 +38,25 @@ public class SortedArrayImpl<E extends Object & Comparable<? super E>> extends A
         }
 
         return -1;
+//        для рекурсии
+//        return recBinaryFind(value, 0, size - 1);
+    }
+
+    //рекурсивный вариант indexOf()
+    private int recBinaryFind(E value, int low, int high) {
+        if (low > high) return -1;
+
+        int mid = (low + high) / 2;
+
+        if (data[mid].equals(value)) {
+            return mid;
+        }
+        else if (data[mid].compareTo(value) > 0) {
+            return recBinaryFind(value, low, mid - 1);
+        }
+        else {
+            low = mid + 1;
+            return recBinaryFind(value, mid + 1, high);
+        }
     }
 }
