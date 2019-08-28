@@ -66,6 +66,7 @@ public class TreeImplTest {
     @Test
     public void display() {
         tree.display();
+        System.out.println(tree.isBalanced());
     }
 
     @Test

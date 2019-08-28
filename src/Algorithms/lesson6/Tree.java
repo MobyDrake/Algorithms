@@ -2,7 +2,7 @@ package Algorithms.lesson6;
 
 import Algorithms.ICollection;
 
-public interface Tree<E> extends ICollection, Iterable<E> {
+public interface Tree<E extends Comparable<? super E>> extends ICollection, Iterable<E> {
 
     enum TraversMode {
         IN_ORDER,
@@ -21,4 +21,6 @@ public interface Tree<E> extends ICollection, Iterable<E> {
     boolean isBalanced();
 
     void traverse(TraversMode mode);
+
+    int deep();
 }
