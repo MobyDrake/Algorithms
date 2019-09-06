@@ -151,4 +151,50 @@ public class Graph {
         vertex.setVisited(true);
     }
 
+    public Stack<String> searchBfs(String startLabel, String findLabel) {
+        int startIndex = indexOf(startLabel);
+        int findIndex = indexOf(findLabel);
+
+        if (startIndex == -1) {
+            throw  new IllegalArgumentException("Invalid startLabel: " + startLabel);
+        }
+
+        if (findIndex == -1) {
+            throw  new IllegalArgumentException("Invalid startLabel: " + findIndex);
+        }
+
+        Queue<Vertex> queue = new LinkedList<>();
+
+        Vertex vertex = vertexList.get(startIndex);
+        visitVertex(queue, vertex);
+
+        while (!queue.isEmpty()) {
+            vertex = getNearUnvisitedVertex(queue.peek());
+            if (vertex != null) {
+                visitVertex(queue, vertex);
+                vertex.setPreviousVertex(queue.peek());
+                if (vertex.getLabel().equals(findLabel)) {
+                    return buildPath(vertex);
+                }
+            }
+            else {
+                queue.remove();
+            }
+        }
+
+        resetVertexState();
+        return null;
+    }
+
+    private Stack<String> buildPath(Vertex vertex) {
+        Stack<String> stack = new Stack<>();
+        Vertex current = vertex;
+
+        while (current != null) {
+            stack.push(current.getLabel());
+            current = current.getPreviousVertex();
+        }
+
+        return stack;
+    }
 }

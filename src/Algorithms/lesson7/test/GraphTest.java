@@ -4,6 +4,8 @@ import Algorithms.lesson7.Graph;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Stack;
+
 import static org.junit.Assert.*;
 
 public class GraphTest {
@@ -126,5 +128,47 @@ public class GraphTest {
 
         graph.bfs("A");
         //ABCDEFGH
+    }
+
+    @Test
+    public void search() {
+        Graph graph1 = new Graph(9);
+
+        graph1.addVertex("A");
+        graph1.addVertex("B");
+        graph1.addVertex("C");
+        graph1.addVertex("D");
+        graph1.addVertex("E");
+        graph1.addVertex("F");
+        graph1.addVertex("G");
+        graph1.addVertex("H");
+        graph1.addVertex("R");
+
+        graph1.addEdges("A", "B", "C", "D");
+        graph1.addEdge("B", "E");
+        graph1.addEdge("E", "H");
+        graph1.addEdge("H", "R");
+        graph1.addEdge("C", "F");
+        graph1.addEdge("D", "G");
+        graph1.addEdge("G", "R");
+
+        Stack<String> stack = graph1.searchBfs("A", "R");
+        showShortPath(stack);
+
+    }
+
+    private void showShortPath(Stack<String> path) {
+        StringBuilder sb = new StringBuilder();
+        boolean isFirst = true;
+
+        while ( !path.isEmpty() ) {
+            if (!isFirst) {
+                sb.append(" -> ");
+            }
+            isFirst = false;
+            sb.append(path.pop());
+        }
+
+        System.out.println(sb);
     }
 }
