@@ -16,7 +16,7 @@ public class HashTableImplTest {
     private Item orange = new Item(1, "Orange", 150);
     private Item banana = new Item(71, "Banana", 100);
     private Item lemon = new Item(60, "Lemon", 250);
-    private Item milk = new Item(52, "Milk", 120);
+    private Item milk = new Item(81, "Milk", 120);
 
     private Item potato = new Item(21, "Potato", 67);
 
